@@ -1,5 +1,5 @@
-import Vue from "vue";
+import Vue, { VueConstructor } from "vue";
 
 export * from "./Resource";
 
-export declare const StatefulResource: Vue;
+export declare const StatefulResource: VueConstructor<Vue>;
