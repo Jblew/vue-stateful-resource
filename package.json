@@ -16,9 +16,11 @@
     "/dist/vue-stateful-resource.css"
   ],
   "scripts": {
+    "build:clean": "rm -rf dist dist-ts",
     "build:vue": "vue-cli-service build --target lib --name vue-stateful-resource src/main.ts",
     "build:types": "tsc -p tsconfig.types.json",
-    "build": "npm run build:vue && npm run build:types",
+    "build:assemble": "cp dist-ts/*.d.ts dist/",
+    "build": "npm run build:clean && npm run build:vue && npm run build:types && npm run build:assemble",
     "lint-fix": "tslint --fix -c tslint.json -p tsconfig.lint.json",
     "semantic-release": "semantic-release"
   },
